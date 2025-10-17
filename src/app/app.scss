@@ -1,0 +1,482 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10vh;
+  height: 100%;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-height: 100%;
+  padding: 20px;
+  gap: 10px;
+}
+
+.section-container-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-height: 100%;
+  padding: 20px;
+  gap: 10px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-link-spacer {
+  display: none;
+}
+
+.tooltip-link:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+.name-text {
+  display: none;
+  font-size: 20px;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.main-text {
+  font-size: 30px;
+  line-height: normal;
+}
+
+.sub-text {
+  font-size: 20px;
+  line-height: normal;
+}
+
+.landing-container {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 0 20px;
+}
+
+.ressty-face {
+  display: none;
+}
+
+.main-text-section {
+  width: 100%;
+}
+
+.main-face-section {
+  display: none;
+}
+
+.toolbar {
+  padding: 20px;
+  color: #fffdf5;
+  background-color: transparent;
+}
+
+// .mat-grid-tile {
+//   background: lightblue;
+// }
+
+.skill-list {
+  width: 100%;
+}
+
+.project-list {
+  width: 100%;
+}
+
+.skill-block {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.skill-block > .skill-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+}
+
+.skill-title {
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.skill-description {
+}
+
+.skill-icon {
+  display: none;
+}
+
+.skill-container-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 700px; /* or your preferred max width */
+  margin: 0 auto;
+  /* Remove flex-grow so it doesn't fill the grid cell */
+}
+
+.testimonial-container-block {
+  width: 100%;
+  height: 100%;
+  // margin: 0 auto;
+  /* Remove flex-grow so it doesn't fill the grid cell */
+}
+
+.testimonial-text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+}
+
+.testimonial-text-block > .text {
+  margin-bottom: 16px;
+}
+
+.contact-block {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.contact-icon-landing {
+  height: 30px;
+  width: 30px;
+  filter:invert(1)
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+  display: flex;
+  justify-content: left;
+}
+
+.typewriter-2 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+  display: flex;
+  justify-content: left;
+  animation-delay: 3s;
+  animation-duration: 3s;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-card-footer {
+  padding: 16px;
+}
+
+.mat-card-title {
+  color: #111215;
+}
+
+.mat-card-text {
+  color: #111215;
+}
+
+.expanding-line {
+  position: absolute; /* Or absolute, depending on desired behavior */
+  top: 0;
+  left: 0;
+  height: 10px; /* Adjust as needed */
+  width: 0%; /* Initial width */
+  background-color: white; /* Or any color */
+  transition: width 0.1s ease-out; /* Smooth transition for width changes */
+}
+
+// Desktop
+
+@media screen and (min-width: 1200px) {
+  .home-container {
+    margin: 10px 120px 10px 120px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10vh;
+  }
+
+  .section-container {
+    margin: 0 120px 30px 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100%;
+    padding-bottom: 10vh;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .toolbar-link-spacer {
+    display: flex;
+    gap: 40px;
+  }
+
+  .tooltip-link:hover {
+    color: gray;
+    cursor: pointer;
+  }
+
+  .name-text {
+    font-size: 32px;
+  }
+
+  .floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .main-text {
+    font-size: 50px;
+  }
+
+  .sub-text {
+    font-size: 30px;
+    line-height: normal;
+  }
+
+  .landing-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ressty-face {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    max-width: 300px;
+  }
+
+  .main-text-section {
+    width: 50%;
+  }
+
+  .main-face-section {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
+
+  // .mat-grid-tile {
+  //   background: lightblue;
+  // }
+
+  .skill-list {
+    width: 100%;
+  }
+
+  .project-list {
+    width: 80%;
+  }
+
+  .skill-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skill-block > .skill-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 50%;
+  }
+
+  .skill-title {
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  .skill-description {
+  }
+
+  .skill-icon {
+    width: 20%;
+  }
+
+  .skill-container-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 700px; /* or your preferred max width */
+    margin: 0 auto;
+    /* Remove flex-grow so it doesn't fill the grid cell */
+  }
+
+  .testimonial-container-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    /* Remove flex-grow so it doesn't fill the grid cell */
+  }
+
+  .testimonial-text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 70%;
+  }
+
+  .testimonial-text-block > .text {
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .contact-block {
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-icon {
+    height: 30px;
+    width: 30px;
+  }
+
+  .typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.15em; /* Adjust as needed */
+    animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+    display: flex;
+    justify-content: left;
+  }
+
+  .typewriter-2 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.15em; /* Adjust as needed */
+    animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+    display: flex;
+    justify-content: left;
+    animation-delay: 3s;
+    animation-duration: 3s;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
+
+  .example-card {
+    max-width: 400px;
+  }
+
+  .example-card-footer {
+    padding: 16px;
+  }
+
+  .mat-card-title {
+    color: #111215;
+  }
+
+  .mat-card-text {
+    color: #111215;
+  }
+
+  .expanding-line {
+    position: absolute; /* Or absolute, depending on desired behavior */
+    top: 0;
+    left: 0;
+    height: 10px; /* Adjust as needed */
+    width: 0%; /* Initial width */
+    background-color: white; /* Or any color */
+    transition: width 0.1s ease-out; /* Smooth transition for width changes */
+  }
+}
