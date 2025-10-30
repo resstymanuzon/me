@@ -9,9 +9,9 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  max-height: 100%;
   padding: 20px;
   gap: 10px;
+  height: 100%;
 }
 
 .section-container-contact {
@@ -19,7 +19,7 @@
   flex-direction: column;
   align-items: left;
   max-height: 100%;
-  padding: 20px;
+
   gap: 10px;
   text-align: center;
 }
@@ -28,6 +28,8 @@
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;
+  text-align: center;
+  font-family: 'PT Serif', serif;
 }
 
 .example-spacer {
@@ -80,6 +82,7 @@
 
 .main-text-section {
   width: 100%;
+  text-align: center;
 }
 
 .main-face-section {
@@ -119,10 +122,14 @@
 
 .skill-title {
   font-weight: 800;
+  font-size: 16px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .skill-description {
+  font-size: 16px;
+  text-align: center;
 }
 
 .skill-icon {
@@ -172,7 +179,7 @@
 .contact-icon-landing {
   height: 30px;
   width: 30px;
-  filter:invert(1)
+  filter: invert(1);
 }
 
 .typewriter {
@@ -220,8 +227,19 @@
   }
 }
 
-.example-card {
-  max-width: 400px;
+.testimonial-card {
+  // max-width: 400px;
+  background-color: #212121;
+}
+
+.skill-card {
+  // max-width: 400px;
+  background-color: black;
+}
+
+.project-card {
+  // max-width: 400px;
+  background-color: white;
 }
 
 .example-card-footer {
@@ -230,10 +248,26 @@
 
 .mat-card-title {
   color: #111215;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.mat-card-text {
-  color: #111215;
+.testimonial-mat-card-text {
+  color: white;
+}
+
+.project-mat-card-text {
+  color: black;
+}
+
+.skill-mat-card-title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.skill-mat-card-text {
+  color: white;
 }
 
 .expanding-line {
@@ -246,14 +280,42 @@
   transition: width 0.1s ease-out; /* Smooth transition for width changes */
 }
 
+.project-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  margin-top: 20px;
+  user-select: none;
+}
+
 // Desktop
 
 @media screen and (min-width: 1200px) {
+  .portfolio-tab-text {
+    color: white;
+  }
+  .project-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .skill-card {
+    // max-width: 400px;
+    background-color: black;
+    height: 100%;
+  }
+
   .home-container {
     margin: 10px 120px 10px 120px;
     display: flex;
     flex-direction: column;
-    padding-bottom: 10vh;
+    padding-bottom: 0;
+    // height: 80vh;
   }
 
   .section-container {
@@ -261,8 +323,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 100%;
     padding-bottom: 10vh;
+    text-align: left;
   }
 
   .example-spacer {
@@ -375,7 +437,7 @@
   .testimonial-container-block {
     display: flex;
     justify-content: center;
-    align-items: center;
+
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -397,6 +459,7 @@
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 20px;
+    
   }
 
   .contact-block {
