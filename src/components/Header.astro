@@ -1,17 +1,18 @@
 ---
 import { site } from '../data/site';
+import { url } from '../lib/url';
 
 const links = [
-  { href: '/#about', label: 'About' },
-  { href: '/#work', label: 'Work' },
-  { href: '/#experience', label: 'Experience' },
-  ...(site.showBlog ? [{ href: '/blog/', label: 'Blog' }] : []),
+  { href: url('/#about'), label: 'About' },
+  { href: url('/#work'), label: 'Work' },
+  { href: url('/#experience'), label: 'Experience' },
+  ...(site.showBlog ? [{ href: url('/blog/'), label: 'Blog' }] : []),
 ];
 ---
 
 <header class="header">
   <div class="container bar">
-    <a class="logo" href="/" aria-label="Ressty Manuzon, home">
+    <a class="logo" href={url('/')} aria-label="Ressty Manuzon, home">
       <span class="mark">RM</span>
       <span class="name">Ressty Manuzon</span>
     </a>
@@ -20,7 +21,7 @@ const links = [
         {links.map((link) => (
           <li><a href={link.href}>{link.label}</a></li>
         ))}
-        <li><a class="cta" href="/#contact">Contact</a></li>
+        <li><a class="cta" href={url('/#contact')}>Contact</a></li>
       </ul>
     </nav>
   </div>
