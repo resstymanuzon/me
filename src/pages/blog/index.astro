@@ -1,0 +1,88 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPosts, formatDate } from '../../lib/blog';
+
+const posts = await getPosts();
+---
+
+<Base title="Blog" description="Notes on product management, marketplaces, AI, and leading teams.">
+  <section class="section container">
+    <p class="eyebrow">Writing</p>
+    <h1>Blog</h1>
+    <p class="lede">Notes on product management, marketplaces, AI, and leading teams.</p>
+
+    {posts.length > 0 ? (
+      <ul class="posts">
+        {posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}/`}>
+              <span class="date">{formatDate(post.data.pubDate)}</span>
+              <span class="title">{post.data.title}{post.data.draft && ' (draft)'}</span>
+              <span class="desc">{post.data.description}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="empty">The first posts are on their way. Check back soon.</p>
+    )}
+  </section>
+</Base>
+
+<style>
+  h1 {
+    font-size: clamp(2.75rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+  }
+
+  .lede {
+    margin-top: 16px;
+    font-size: 1.2rem;
+    color: var(--muted);
+  }
+
+  .posts {
+    margin: 56px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1.5px solid var(--line);
+  }
+
+  .posts a {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-block: 28px;
+    border-bottom: 1.5px solid var(--line);
+    text-decoration: none;
+  }
+
+  .date {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .posts a:hover .title {
+    text-decoration: underline;
+    text-decoration-color: var(--coral);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+
+  .desc {
+    color: var(--muted);
+  }
+
+  .empty {
+    margin-top: 48px;
+    color: var(--muted);
+  }
+</style>

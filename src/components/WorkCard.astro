@@ -1,0 +1,121 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'work'>;
+}
+
+const { entry } = Astro.props;
+const { title, company, year, summary, metrics, color } = entry.data;
+---
+
+<!-- Opens the matching case study modal (`#work-<id>`) rendered on the home page -->
+<button type="button" class={`card swatch-${color}`} data-open-dialog={`work-${entry.id}`}>
+  <div class="top">
+    {metrics.length > 0 ? (
+      <p class="metric">
+        <span class="value">{metrics[0].value}</span>
+        <span class="label">{metrics[0].label}</span>
+      </p>
+    ) : (
+      <p class="metric">
+        <span class="value">↗</span>
+        <span class="label">Engineering roots</span>
+      </p>
+    )}
+  </div>
+  <div class="body">
+    <p class="meta">{company} · {year}</p>
+    <h3>{title}</h3>
+    <p class="summary">{summary}</p>
+    <span class="more">Read case study <span aria-hidden="true">→</span></span>
+  </div>
+</button>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+  }
+
+  .top {
+    background: var(--swatch);
+    color: var(--swatch-ink);
+    padding: 28px 24px;
+  }
+
+  /* Value above label, with room for two label lines, so every band is the same height */
+  .metric {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .value {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.35;
+    min-height: calc(2 * 1.35em);
+  }
+
+  /* The outline wraps only the white part so the color band runs edge to edge */
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px;
+    flex: 1;
+    border: 1.5px solid var(--line);
+    border-top: 0;
+    border-radius: 0 0 var(--radius) var(--radius);
+    transition: border-color 0.2s ease;
+  }
+
+  .card:hover .body {
+    border-color: var(--ink);
+  }
+
+  .meta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  .summary {
+    color: var(--muted);
+    flex: 1;
+  }
+
+  .more {
+    font-family: var(--font-display);
+    font-weight: 600;
+    margin-top: 8px;
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+import { site } from '../data/site';
+
+const links = [
+  { href: '/#about', label: 'About' },
+  { href: '/#work', label: 'Work' },
+  { href: '/#experience', label: 'Experience' },
+  ...(site.showBlog ? [{ href: '/blog/', label: 'Blog' }] : []),
+];
+---
+
+<header class="header">
+  <div class="container bar">
+    <a class="logo" href="/" aria-label="Ressty Manuzon, home">
+      <span class="mark">RM</span>
+      <span class="name">Ressty Manuzon</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        {links.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+        <li><a class="cta" href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 68px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  .mark {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--coral);
+    color: var(--on-swatch);
+    font-size: 0.9rem;
+  }
+
+  .name {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  nav a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  nav a:hover {
+    background: var(--surface);
+  }
+
+  .cta {
+    background: var(--ink);
+    color: var(--bg);
+    padding-inline: 16px;
+    margin-left: 4px;
+  }
+
+  nav a.cta:hover {
+    background: var(--coral);
+    color: var(--on-swatch);
+  }
+
+  /* On narrow phones keep only Work, Blog and Contact */
+  @media (max-width: 479px) {
+    li:nth-child(1),
+    li:nth-child(3) {
+      display: none;
+    }
+  }
+
+  @media (min-width: 720px) {
+    .name {
+      display: inline;
+    }
+    nav a {
+      padding-inline: 14px;
+    }
+  }
+</style>
