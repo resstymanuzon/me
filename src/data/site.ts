@@ -83,7 +83,7 @@ export const experience = [
 export const testimonials = [
   {
     name: 'Christian Jay Rosales',
-    relation: 'Software Engineer · Reported to Ressty',
+    relation: 'Reported to Ressty',
     color: 'coral',
     highlight:
       'Ressty is a standout PM, largely because his technical background allows him to bridge the gap between engineering and business.',
@@ -99,14 +99,15 @@ export const testimonials = [
     name: 'Matthew Lopez',
     relation: 'Teammate',
     color: 'yellow',
-    highlight: 'If you need a solid product manager who understands engineers, Ressty is that guy.',
+    highlight:
+      'He is a solid and highly technical PM having been in the trenches doing full stack web dev, which made it so smooth to work with him and build great products.',
     quote: [
       'If you need a solid product manager who understands engineers, Ressty is that guy. I’ve worked with him, both when he was a software engineer and when he became a product manager. He is a solid and highly technical PM having been in the trenches doing full stack web dev, which made it so smooth to work with him and build great products. He’s very data driven and is so passionate about UX. He’s known to be my company’s most avid user of Whimsical and Figma—he just loves to visualise and document everything from user flows to architectures to team processes which makes him so well organised. And overall he’s just a great individual to work with because he’s naturally good with people, jibes well with colleagues, and always looks out for them.',
     ],
   },
   {
     name: 'Elsha Siochi',
-    relation: 'Software Engineer · Reported to Ressty',
+    relation: 'Reported to Ressty',
     color: 'blue',
     highlight:
       'With his technical background, Ressty demonstrated strong judgment in balancing product goals with engineering realities.',

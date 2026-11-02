@@ -163,13 +163,13 @@ const posts = (await getPosts()).slice(0, 3);
       {testimonials.map((t, i) => (
         <li class={`quote swatch-${t.color}`}>
           <blockquote>“{t.highlight}”</blockquote>
-          <button type="button" class="read-more" data-open-dialog={`testimonial-${i}`}>
-            Read full recommendation
-          </button>
           <p class="who">
             <strong>{t.name}</strong>
             <span class="muted">{t.relation}</span>
           </p>
+          <button type="button" class="read-more" data-open-dialog={`testimonial-${i}`}>
+            Read full recommendation
+          </button>
         </li>
       ))}
     </ul>
@@ -444,7 +444,8 @@ const posts = (await getPosts()).slice(0, 3);
   .quotes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: start;
+    /* Every row as tall as the tallest card, so all cards match */
+    grid-auto-rows: 1fr;
     gap: 20px;
     padding: 0;
     margin: 48px 0 0;
@@ -497,6 +498,7 @@ const posts = (await getPosts()).slice(0, 3);
   }
 
   .quote .who {
+    margin-top: auto;
     padding-top: 16px;
     border-top: 1.5px solid var(--line);
   }
