@@ -79,18 +79,6 @@ export const experience = [
   },
 ];
 
-export const education = {
-  school: 'Texas A&M University',
-  degree: 'B.S. Mechanical Engineering',
-  year: '2017',
-};
-
-export const skills = {
-  Product: ['Product strategy', 'User interviews', 'A/B testing', 'Prioritization'],
-  Engineering: ['TypeScript', 'PHP', 'SQL', 'HTML', 'CSS'],
-  Languages: ['English', 'Tagalog', 'Japanese (JLPT N3)'],
-};
-
 // `highlight` is a verbatim excerpt shown as the pull quote; `quote` holds the full text.
 export const testimonials = [
   {
