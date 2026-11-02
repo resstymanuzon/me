@@ -83,7 +83,7 @@ export const experience = [
 export const testimonials = [
   {
     name: 'Christian Jay Rosales',
-    relation: 'Reported to Ressty',
+    relation: 'Full-stack software engineer',
     color: 'coral',
     highlight:
       'Ressty is a standout PM, largely because his technical background allows him to bridge the gap between engineering and business.',
@@ -97,7 +97,7 @@ export const testimonials = [
   },
   {
     name: 'Matthew Lopez',
-    relation: 'Teammate',
+    relation: 'Co-manager',
     color: 'yellow',
     highlight:
       'He is a solid and highly technical PM having been in the trenches doing full stack web dev, which made it so smooth to work with him and build great products.',
@@ -107,7 +107,7 @@ export const testimonials = [
   },
   {
     name: 'Elsha Siochi',
-    relation: 'Reported to Ressty',
+    relation: 'Full-stack software engineer',
     color: 'blue',
     highlight:
       'With his technical background, Ressty demonstrated strong judgment in balancing product goals with engineering realities.',
@@ -119,7 +119,7 @@ export const testimonials = [
   },
   {
     name: 'Kiyan Vasquez',
-    relation: 'Reported to Ressty',
+    relation: 'Full-stack software engineer',
     color: 'green',
     highlight:
       'As our PM, he was instrumental in leading multiple initiatives and features that were highly visible to both clients and stakeholders.',
